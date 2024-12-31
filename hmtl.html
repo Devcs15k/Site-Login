@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Profissional</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+
+        .login-container, .welcome-container {
+            background: #fff;
+            color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #2575fc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #1a5bcf;
+        }
+
+        .links {
+            margin-top: 15px;
+        }
+
+        .links a {
+            display: block;
+            margin: 5px 0;
+            color: #2575fc;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .welcome-container h1 {
+            color: #333;
+            font-size: 22px;
+        }
+
+        .welcome-container p {
+            color: #555;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Tela de Login -->
+        <div class="login-container" id="login-container">
+            <h1>Bem-vindo</h1>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            <div class="links">
+                <a href="#">Esqueceu a senha?</a>
+                <a href="#">Criar conta</a>
+            </div>
+        </div>
+
+        <!-- Tela de Redirecionamento -->
+        <div class="welcome-container" id="welcome-container" style="display: none;">
+            <h1>SLKK KKKK TUDO ISSO PRA NADA</h1>
+            <p>SE VC CHEGOU AQUI PARABÉNS LEK JKKK</p>
+            <p><strong>NOVIDADES EM BREVE!</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Captura o formulário e os elementos
+        const loginForm = document.getElementById("login-form");
+        const loginContainer = document.getElementById("login-container");
+        const welcomeContainer = document.getElementById("welcome-container");
+
+        // Dados de login fictícios
+        const validEmail = "teste@exemplo.com";
+        const validPassword = "123456";
+
+        // Lógica de login
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // Evita o envio do formulário
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email === validEmail && password === validPassword) {
+                // Esconde a tela de login e mostra a tela de redirecionamento
+                loginContainer.style.display = "none";
+                welcomeContainer.style.display = "block";
+            } else {
+                alert("E-mail ou senha incorretos. Tente novamente!");
+            }
+        });
+    </script>
+</body>
+  </html>
